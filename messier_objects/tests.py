@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import MessierObject
+from messier_objects import models
 
 
 class TestMessierObjects(TestCase):
