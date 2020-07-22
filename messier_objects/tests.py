@@ -1,3 +1,7 @@
 from django.test import TestCase
+from .models import MessierObject
 
-# Create your tests here.
+
+class TestMessierObjects(TestCase):
+
+    pass
