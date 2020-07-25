@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1>messier_objects_overview.html</h1>
+<br>
+{% for mes_obj in list_of_mes_obj %}
+    <h3>M{{ mes_obj.messier_number }} - 
+        {% if mes_obj.name == '–' %}
+           No Name</h3>
+        {% else %}
+            {{ mes_obj.name }}</h3>
+        {% endif %}
+    <h4>NCG / IC Number: {{ mes_obj.ncg_or_ic_number }}</h4>
+    <h5>{{ mes_obj.object_type }}</h5>
+    <p>Distance in KLY: {{ mes_obj.distance_kly }}</p>
+    <p>Constellation: {{ mes_obj.constellation }}</p>
+    <p>Apparent Magnitude: {{ mes_obj.apparent_magnitude }}</p>
+    <img src='media/{{ mes_obj.photo }}' />
+    <br>
+    <br>
+    <br>
+{% endfor %}
+
+
+{% endblock %}
