@@ -12,7 +12,7 @@ class MessierObject(models.Model):
     photo = models.ImageField(upload_to='messier_objects', blank=True, null=True, default='notcaptured.JPG')
 
     def __str__(self):
-        return self.messier_number + ': ' + self.name
+        return 'M' + str(self.messier_number) + ': ' + self.name
 
     class Meta:
         ordering = ('messier_number', )

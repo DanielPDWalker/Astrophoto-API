@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
 
 <h1>messier_objects_overview.html</h1>
 <br>
+<hr>
 {% for mes_obj in list_of_mes_obj %}
     <h3>M{{ mes_obj.messier_number }} - 
         {% if mes_obj.name == '–' %}
@@ -17,10 +17,14 @@
     <p>Distance in KLY: {{ mes_obj.distance_kly }}</p>
     <p>Constellation: {{ mes_obj.constellation }}</p>
     <p>Apparent Magnitude: {{ mes_obj.apparent_magnitude }}</p>
-    <img src='media/{{ mes_obj.photo }}' />
     <br>
+    {% if mes_obj.photo %}
+        <img src="{{ mes_obj.photo.url }}">
+    {% else %}
+        <img src='/media/notcaptured.JPG'>
+    {% endif %}
     <br>
-    <br>
+    <hr>
 {% endfor %}
 
 
