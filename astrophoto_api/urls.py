@@ -19,10 +19,18 @@ from django.conf.urls import url
 from django.views.static import serve
 from django.conf import settings
 
+from rest_framework import routers
+from messier_objects.urls import router as messier_objects_router
+from solar_system_objects.urls import router as solar_system_objects_router
+
+router = routers.DefaultRouter()
+router.registry.extend(messier_objects_router.registry)
+router.registry.extend(solar_system_objects_router.registry)
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('frontend.urls')),
-    path('api/', include('messier_objects.urls')),
+    path('api/', include(router.urls)),
     url(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT,})
 ]
 

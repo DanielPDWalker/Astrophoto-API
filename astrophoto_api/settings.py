@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'messier_objects',
+    'solar_system_objects',
     'rest_framework'
 ]
 
