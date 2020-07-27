@@ -13,7 +13,7 @@ def mes_obj_overview(request):
     if request.method == 'POST':
         if 'captured_only_button' in request.POST:
             list_of_mes_obj = MessierObject.objects.exclude(photo='notcaptured.JPG')
-        if 'uncaptured_only_button' in request.POST:
+        if 'not_captured_only_button' in request.POST:
             list_of_mes_obj = MessierObject.objects.exclude(~Q(photo='notcaptured.JPG'))
         if 'reset_filters_button' in request.POST:
             list_of_mes_obj = MessierObject.objects.all()
