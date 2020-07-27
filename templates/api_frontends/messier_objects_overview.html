@@ -4,13 +4,19 @@
 
 <h1>messier_objects_overview.html</h1>
 <br>
+<form method="POST" class="form-group">
+    {% csrf_token %}
+    <button name="captured_only_button" type="submit">Show Captured</button><br>
+    <button name="not_captured_only_button" type="submit">Show Not Captured</button><br>
+    <button name="reset_filters_button" type="submit">Reset Filters</button><br>
+</form>
 <hr>
 {% for mes_obj in list_of_mes_obj %}
-    <h2>M{{ mes_obj.messier_number }} - 
+    <h2><a href="{% url 'mes_obj_detail' mes_obj.messier_number %}">M{{ mes_obj.messier_number }} - 
         {% if mes_obj.name == '–' %}
-           No Name</h2>
+           No Name</a></h2>
         {% else %}
-            {{ mes_obj.name }}</h3>
+            {{ mes_obj.name }}</a></h3>
         {% endif %}
     <h5>NCG / IC Number: {{ mes_obj.ncg_or_ic_number }}</h5>
     <h5>Object Type: {{ mes_obj.object_type }}</h5>
@@ -19,9 +25,9 @@
     <p>Apparent Magnitude: {{ mes_obj.apparent_magnitude }}</p>
     <br>
     {% if mes_obj.photo %}
-        <img src="{{ mes_obj.photo.url }}">
+        <a href="{% url 'mes_obj_detail' mes_obj.messier_number %}"><img src="{{ mes_obj.photo.url }}" width="1240"></a>
     {% else %}
-        <img src='/media/notcaptured.JPG'>
+        <a href="{% url 'mes_obj_detail' mes_obj.messier_number %}"><img src='/media/notcaptured.JPG' width="500"></a>
     {% endif %}
     <br>
     <hr>

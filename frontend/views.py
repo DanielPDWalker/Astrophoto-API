@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.db.models import Q
 
 from messier_objects.models import MessierObject
 
@@ -8,7 +9,16 @@ def index(request):
 
 
 def mes_obj_overview(request):
-    list_of_mes_obj = MessierObject.objects.all()
+
+    if request.method == 'POST':
+        if 'captured_only_button' in request.POST:
+            list_of_mes_obj = MessierObject.objects.exclude(photo='notcaptured.JPG')
+        if 'not_captured_only_button' in request.POST:
+            list_of_mes_obj = MessierObject.objects.exclude(~Q(photo='notcaptured.JPG'))
+        if 'reset_filters_button' in request.POST:
+            list_of_mes_obj = MessierObject.objects.all()
+    else:
+        list_of_mes_obj = MessierObject.objects.all()
 
     context = {
         "list_of_mes_obj": list_of_mes_obj
