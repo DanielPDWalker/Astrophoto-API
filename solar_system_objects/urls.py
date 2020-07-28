@@ -1,11 +1,11 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 
-from messier_objects import views
+from solar_system_objects import views
 
 router = DefaultRouter()
-router.register('messier-object', views.MessierViewSet,
-                basename='messier-object')
+router.register('solar-system-object', views.SolarSystemViewSet,
+                basename='solar-system-object')
 
 
 urlpatterns = [
