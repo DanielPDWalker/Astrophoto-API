@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'messier_objects',
     'solar_system_objects',
+    'asteroids_comets_meteors',
     'rest_framework'
 ]
 
