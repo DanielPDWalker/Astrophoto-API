@@ -9,9 +9,10 @@ class MessierObject(models.Model):
     distance_kly = models.CharField(max_length=25)
     constellation = models.CharField(max_length=50)
     apparent_magnitude = models.FloatField()
-    photo = models.ImageField(upload_to='messier_objects', blank=True, null=True, default='notcaptured.JPG')
+    photo = models.ImageField(
+        upload_to='messier_objects', blank=True, null=True, default='notcaptured.JPG')
     captured = models.BooleanField(default=False)
-    
+
     def __str__(self):
         return 'M' + str(self.messier_number) + ': ' + self.name
 

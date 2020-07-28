@@ -12,9 +12,11 @@ def mes_obj_overview(request):
 
     if request.method == 'POST':
         if 'captured_only_button' in request.POST:
-            list_of_mes_obj = MessierObject.objects.exclude(photo='notcaptured.JPG')
+            list_of_mes_obj = MessierObject.objects.exclude(
+                photo='notcaptured.JPG')
         if 'not_captured_only_button' in request.POST:
-            list_of_mes_obj = MessierObject.objects.exclude(~Q(photo='notcaptured.JPG'))
+            list_of_mes_obj = MessierObject.objects.exclude(
+                ~Q(photo='notcaptured.JPG'))
         if 'reset_filters_button' in request.POST:
             list_of_mes_obj = MessierObject.objects.all()
     else:
@@ -33,5 +35,5 @@ def mes_obj_detail(request, mes_num):
     context = {
         "mes_obj": mes_obj
     }
-    
+
     return render(request, 'api_frontends/messier_object_detail.html', context)

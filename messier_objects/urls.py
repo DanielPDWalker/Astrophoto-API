@@ -4,7 +4,8 @@ from rest_framework.routers import DefaultRouter
 from messier_objects import views
 
 router = DefaultRouter()
-router.register('messier-object', views.MessierViewSet, basename='messier-object')
+router.register('messier-object', views.MessierViewSet,
+                basename='messier-object')
 
 
 urlpatterns = [
