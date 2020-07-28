@@ -14,10 +14,10 @@
 {% if list_of_mes_obj %}
     {% for mes_obj in list_of_mes_obj %}
         <h2><a href="{% url 'mes_obj_detail' mes_obj.messier_number %}">M{{ mes_obj.messier_number }}
-            {% if mes_obj.name == '–' %}
-                </a></h2>
-            {% else %}
+            {% if mes_obj.name %}
                 - {{ mes_obj.name }}</a></h2>
+            {% else %}
+                </a></h2>
             {% endif %}
         <h5>NCG / IC Number: {{ mes_obj.ncg_or_ic_number }}</h5>
         <h5>Object Type: {{ mes_obj.object_type }}</h5>
@@ -34,7 +34,7 @@
         <hr>
     {% endfor %}
 {% else %}
-<h3>Nothing here yet. <br>
+<h3>Nothing here yet. <br> <br>
 Either add data through the api or admin area, or change your filtering.</h3>
 {% endif %}
 {% endblock %}

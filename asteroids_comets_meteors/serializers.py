@@ -1,21 +1,22 @@
 from rest_framework import serializers
 
-from solar_system_objects import models
+from asteroids_comets_meteors import models
 
 
-class SolarSystemSerializer(serializers.HyperlinkedModelSerializer):
+class AsteroidCometMeteorSerializer(serializers.HyperlinkedModelSerializer):
     """Serializes messier object data into useable form"""
     url = serializers.HyperlinkedIdentityField(
-        view_name='solar-system-object-detail')
+        view_name='asteroid-comet-meteor-detail')
 
     class Meta:
-        model = models.SolarSystemObject
+        model = models.AsteroidCometMeteorObject
         fields = ('url',
                   'id',
                   'name',
+                  'scientific_name',
                   'object_type',
-                  'parent_object',
-                  'distance_from_sun_au',
+                  'size_km',
+                  'discovery_date',
                   'photo',
                   'captured'
                   )

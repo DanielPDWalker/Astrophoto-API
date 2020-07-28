@@ -9,7 +9,7 @@ class SolarSystemObjectAdmin(admin.ModelAdmin):
     list_display_links = ('name',)
     list_editable = ('captured',)
     search_fields = ('object_type', 'parent_object',
-                     'distance_from_sun_au')
+                     'distance_from_sun_au', 'name')
     list_per_page = 25
 
 

@@ -4,10 +4,10 @@ from django.db import models
 class SolarSystemObject(models.Model):
     name = models.CharField(max_length=255)
     object_type = models.CharField(max_length=255)
-    parent_object = models.CharField(max_length=255)
+    parent_object = models.CharField(max_length=255, blank=True, null=True)
     distance_from_sun_au = models.FloatField(max_length=25)
     photo = models.ImageField(
-        upload_to='messier_objects', blank=True, null=True)
+        upload_to='solar_system_objects', blank=True, null=True)
     captured = models.BooleanField(default=False)
 
     def __str__(self):

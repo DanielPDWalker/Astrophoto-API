@@ -22,10 +22,12 @@ from django.conf import settings
 from rest_framework import routers
 from messier_objects.urls import router as messier_objects_router
 from solar_system_objects.urls import router as solar_system_objects_router
+from asteroids_comets_meteors.urls import router as asteroids_comets_meteors_router
 
 router = routers.DefaultRouter()
 router.registry.extend(messier_objects_router.registry)
 router.registry.extend(solar_system_objects_router.registry)
+router.registry.extend(asteroids_comets_meteors_router.registry)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
