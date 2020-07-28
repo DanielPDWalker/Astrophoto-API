@@ -10,7 +10,7 @@ class MessierObject(models.Model):
     constellation = models.CharField(max_length=50)
     apparent_magnitude = models.FloatField()
     photo = models.ImageField(
-        upload_to='messier_objects', blank=True, null=True, default='notcaptured.JPG')
+        upload_to='messier_objects', blank=True, null=True)
     captured = models.BooleanField(default=False)
 
     def __str__(self):

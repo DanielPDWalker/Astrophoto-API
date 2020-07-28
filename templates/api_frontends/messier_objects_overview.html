@@ -11,27 +11,30 @@
     <button name="reset_filters_button" type="submit">Reset Filters</button><br>
 </form>
 <hr>
-{% for mes_obj in list_of_mes_obj %}
-    <h2><a href="{% url 'mes_obj_detail' mes_obj.messier_number %}">M{{ mes_obj.messier_number }} - 
-        {% if mes_obj.name == '–' %}
-           No Name</a></h2>
+{% if list_of_mes_obj %}
+    {% for mes_obj in list_of_mes_obj %}
+        <h2><a href="{% url 'mes_obj_detail' mes_obj.messier_number %}">M{{ mes_obj.messier_number }}
+            {% if mes_obj.name == '–' %}
+                </a></h2>
+            {% else %}
+                - {{ mes_obj.name }}</a></h2>
+            {% endif %}
+        <h5>NCG / IC Number: {{ mes_obj.ncg_or_ic_number }}</h5>
+        <h5>Object Type: {{ mes_obj.object_type }}</h5>
+        <p>Distance in KLY: {{ mes_obj.distance_kly }}</p>
+        <p>Constellation: {{ mes_obj.constellation }}</p>
+        <p>Apparent Magnitude: {{ mes_obj.apparent_magnitude }}</p>
+        <br>
+        {% if mes_obj.captured %}
+            <a href="{% url 'mes_obj_detail' mes_obj.messier_number %}"><img src="{{ mes_obj.photo.url }}" width="1240"></a>
         {% else %}
-            {{ mes_obj.name }}</a></h3>
+            <p>Not Captured / No Image Uploaded.</p>
         {% endif %}
-    <h5>NCG / IC Number: {{ mes_obj.ncg_or_ic_number }}</h5>
-    <h5>Object Type: {{ mes_obj.object_type }}</h5>
-    <p>Distance in KLY: {{ mes_obj.distance_kly }}</p>
-    <p>Constellation: {{ mes_obj.constellation }}</p>
-    <p>Apparent Magnitude: {{ mes_obj.apparent_magnitude }}</p>
-    <br>
-    {% if mes_obj.photo %}
-        <a href="{% url 'mes_obj_detail' mes_obj.messier_number %}"><img src="{{ mes_obj.photo.url }}" width="1240"></a>
-    {% else %}
-        <a href="{% url 'mes_obj_detail' mes_obj.messier_number %}"><img src='/media/notcaptured.JPG' width="500"></a>
-    {% endif %}
-    <br>
-    <hr>
-{% endfor %}
-
-
+        <br>
+        <hr>
+    {% endfor %}
+{% else %}
+<h3>Nothing here yet. <br>
+Either add data through the api or admin area, or change your filtering.</h3>
+{% endif %}
 {% endblock %}
