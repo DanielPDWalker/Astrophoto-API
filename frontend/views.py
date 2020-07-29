@@ -17,6 +17,7 @@ def mes_obj_overview(request):
             list_of_mes_obj = MessierObject.objects.filter(captured=False)
         if 'reset_filters_button' in request.POST:
             list_of_mes_obj = MessierObject.objects.all()
+    # else if not post request.
     else:
         list_of_mes_obj = MessierObject.objects.all()
 
@@ -46,6 +47,7 @@ def sol_obj_overview(request):
             list_of_sol_obj = SolarSystemObject.objects.filter(captured=False)
         if 'reset_filters_button' in request.POST:
             list_of_sol_obj = SolarSystemObject.objects.all()
+    # else if not post request.
     else:
         list_of_sol_obj = SolarSystemObject.objects.all()
 

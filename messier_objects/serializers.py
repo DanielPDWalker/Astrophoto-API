@@ -20,5 +20,6 @@ class MessierSerializer(serializers.HyperlinkedModelSerializer):
                   'constellation',
                   'apparent_magnitude',
                   'photo',
-                  'captured'
+                  'captured',
+                  'capture_date'
                   )

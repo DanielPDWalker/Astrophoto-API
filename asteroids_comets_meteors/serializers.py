@@ -13,10 +13,12 @@ class AsteroidCometMeteorSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url',
                   'id',
                   'name',
+                  'slug',
                   'scientific_name',
                   'object_type',
                   'size_km',
                   'discovery_date',
                   'photo',
-                  'captured'
+                  'captured',
+                  'capture_date'
                   )
