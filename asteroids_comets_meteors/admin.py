@@ -5,7 +5,8 @@ from asteroids_comets_meteors import models
 
 class AsteroidCometMeteorObjectAdmin(admin.ModelAdmin):
     list_display = ('name', 'scientific_name', 'object_type',
-                    'captured')
+                    'captured', 'capture_date')
+    exclude = ('slug',)
     list_display_links = ('name', 'scientific_name')
     list_editable = ('captured',)
     search_fields = ('object_type',)

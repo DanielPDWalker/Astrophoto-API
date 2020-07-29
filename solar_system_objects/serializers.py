@@ -4,7 +4,7 @@ from solar_system_objects import models
 
 
 class SolarSystemSerializer(serializers.HyperlinkedModelSerializer):
-    """Serializes messier object data into useable form"""
+    """Serializes solar system object data into useable form"""
     url = serializers.HyperlinkedIdentityField(
         view_name='solar-system-object-detail')
 

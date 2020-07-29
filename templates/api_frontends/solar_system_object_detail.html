@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block content %}
+
+<br />
+<hr />
+<h2>{{ sol_obj.name }}</h2>
+<h5>Object Type: {{ sol_obj.object_type }}</h5>
+<p>Parent Object: {{ sol_obj.parent_object }}</p>
+<p>Distance from sun: {{ sol_obj.distance_from_sun_au }}AU</p>
+<br />
+{% if sol_obj.captured %}
+<img src="{{ sol_obj.photo.url }}" />
+{% else %}
+<p>Not Captured / No Image Uploaded.</p>
+{% endif %}
+<br />
+<hr />
+
+{% endblock %}
