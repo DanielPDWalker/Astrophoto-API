@@ -12,6 +12,7 @@ class MessierObject(models.Model):
     photo = models.ImageField(
         upload_to='messier_objects', blank=True, null=True)
     captured = models.BooleanField(default=False)
+    capture_date = models.DateField(blank=True, null=True)
 
     def __str__(self):
         try:

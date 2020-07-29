@@ -5,7 +5,7 @@ from messier_objects import models
 
 class MessierObjectAdmin(admin.ModelAdmin):
     list_display = ('messier_number', 'name', 'object_type',
-                    'constellation', 'captured')
+                    'constellation', 'captured', 'capture_date')
     list_display_links = ('messier_number', 'name')
     list_editable = ('captured',)
     search_fields = ('object_type', 'constellation',

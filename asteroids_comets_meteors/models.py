@@ -1,8 +1,11 @@
 from django.db import models
+from django.utils.text import slugify
+from utils.slug_utils import unique_slugify
 
 
 class AsteroidCometMeteorObject(models.Model):
     name = models.CharField(max_length=255, blank=True, null=True)
+    slug = models.SlugField(blank=True)
     scientific_name = models.CharField(max_length=255)
     object_type = models.CharField(max_length=255)
     size_km = models.FloatField(max_length=255, blank=True, null=True)
@@ -10,6 +13,12 @@ class AsteroidCometMeteorObject(models.Model):
     photo = models.ImageField(
         upload_to='asteroid_comet_meteor', blank=True, null=True)
     captured = models.BooleanField(default=False)
+    capture_date = models.DateField(blank=True, null=True)
+
+    def save(self, **kwargs):
+        slug_str = "%s" % (self.scientific_name)
+        unique_slugify(self, slug_str)
+        super(AsteroidCometMeteorObject, self).save(**kwargs)
 
     def __str__(self):
         try:

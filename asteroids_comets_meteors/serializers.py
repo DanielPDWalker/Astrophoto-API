@@ -4,7 +4,7 @@ from asteroids_comets_meteors import models
 
 
 class AsteroidCometMeteorSerializer(serializers.HyperlinkedModelSerializer):
-    """Serializes messier object data into useable form"""
+    """Serializes asteroid, comet and meteor data into useable form"""
     url = serializers.HyperlinkedIdentityField(
         view_name='asteroid-comet-meteor-detail')
 
