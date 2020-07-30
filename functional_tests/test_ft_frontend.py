@@ -12,7 +12,7 @@ class FrontendTest(LiveServerTestCase):
     # Edythe turns on her home edition of AstroPhoto for the first time.
     # (The database will be empty due to LiveServerTestCase)
     def setUp(self):
-        self.browser = webdriver.Chrome()
+        self.browser = webdriver.Firefox()
 
     def tearDown(self):
         self.browser.quit()

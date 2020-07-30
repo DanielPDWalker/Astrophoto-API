@@ -14,4 +14,9 @@ urlpatterns = [
          name='sol_obj_overview'),
     path('solar_system_objects/<str:slug>',
          views.sol_obj_detail, name='sol_obj_detail'),
+    path('asteroids_comets_meteors',
+         views.acm_obj_overview, name='acm_obj_overview'),
+    path('asteroids_comets_meteors/<str:slug>',
+         views.acm_obj_detail, name='acm_obj_detail'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -13,9 +13,11 @@ class SolarSystemSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url',
                   'id',
                   'name',
+                  'slug',
                   'object_type',
                   'parent_object',
                   'distance_from_sun_au',
                   'photo',
-                  'captured'
+                  'captured',
+                  'capture_date'
                   )

@@ -17,6 +17,11 @@
 <p>Apparent Magnitude: {{ mes_obj.apparent_magnitude }}</p>
 <br>
 {% if mes_obj.captured %}
+{% if mes_obj.capture_date %}
+<p>Captured: {{ mes_obj.capture_date }}</p>
+{% else %}
+<p>No capture date set.</p>
+{% endif %}
     <img src="{{ mes_obj.photo.url }}">
 {% else %}
     <p>Not Captured / No Image Uploaded.</p>

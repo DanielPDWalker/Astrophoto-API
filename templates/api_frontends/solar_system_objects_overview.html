@@ -13,7 +13,11 @@
 <p>Parent Object: {{ sol_obj.parent_object }}</p>
 <p>Distance from the sun: {{ sol_obj.distance_from_sun_au }}AU</p>
 <br />
-{% if sol_obj.captured %}
+{% if sol_obj.captured %} {% if sol_obj.capture_date %}
+<p>Captured: {{ sol_obj.capture_date }}</p>
+{% else %}
+<p>No capture date set.</p>
+{% endif %}
 <a href="{% url 'sol_obj_detail' sol_obj.slug %}"
   ><img src="{{ sol_obj.photo.url }}" width="1240"
 /></a>

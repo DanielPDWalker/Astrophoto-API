@@ -15,6 +15,9 @@ class SolarSystemObject(models.Model):
     capture_date = models.DateField(blank=True, null=True)
 
     def save(self, **kwargs):
+        """Code found from :
+        https://stackoverflow.com/questions/3816307/how-to-create-a-unique-slug-in-django
+        """
         slug_str = "%s" % (self.name)
         unique_slugify(self, slug_str)
         super(SolarSystemObject, self).save(**kwargs)

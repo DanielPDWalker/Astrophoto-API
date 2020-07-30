@@ -7,7 +7,11 @@
 <p>Parent Object: {{ sol_obj.parent_object }}</p>
 <p>Distance from sun: {{ sol_obj.distance_from_sun_au }}AU</p>
 <br />
-{% if sol_obj.captured %}
+{% if sol_obj.captured %} {% if sol_obj.capture_date %}
+<p>Captured: {{ sol_obj.capture_date }}</p>
+{% else %}
+<p>No capture date set.</p>
+{% endif %}
 <img src="{{ sol_obj.photo.url }}" />
 {% else %}
 <p>Not Captured / No Image Uploaded.</p>
