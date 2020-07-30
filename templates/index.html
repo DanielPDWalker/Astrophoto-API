@@ -1,10 +1,11 @@
 {% extends 'base.html' %} {% block content %}
 
-<h1>index.html</h1>
-
+<h1>Home</h1>
+<br />
 <h3>
   <a href="{% url 'mes_obj_overview' %}">[Messier Objects]</a><br /><br />
-  <a href="">[Comets, Meteors, Asteroids]</a><br /><br />
+  <a href="{% url 'acm_obj_overview' %}">[Comets, Meteors, Asteroids]</a
+  ><br /><br />
   <a href="{% url 'sol_obj_overview' %}">[Solar System Objects]</a><br /><br />
 </h3>
 

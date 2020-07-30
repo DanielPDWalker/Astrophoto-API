@@ -2,6 +2,9 @@ from django.shortcuts import render, get_object_or_404
 
 from messier_objects.models import MessierObject
 from solar_system_objects.models import SolarSystemObject
+from asteroids_comets_meteors.models import AsteroidCometMeteorObject
+
+from utils.frontend_view_utils import overview_post_request
 
 
 def index(request):
@@ -11,13 +14,8 @@ def index(request):
 def mes_obj_overview(request):
 
     if request.method == 'POST':
-        if 'captured_only_button' in request.POST:
-            list_of_mes_obj = MessierObject.objects.filter(captured=True)
-        if 'not_captured_only_button' in request.POST:
-            list_of_mes_obj = MessierObject.objects.filter(captured=False)
-        if 'reset_filters_button' in request.POST:
-            list_of_mes_obj = MessierObject.objects.all()
-    # else if not post request.
+        list_of_mes_obj = overview_post_request(request)
+        # else if not post request.
     else:
         list_of_mes_obj = MessierObject.objects.all()
 
@@ -25,7 +23,8 @@ def mes_obj_overview(request):
         "list_of_mes_obj": list_of_mes_obj
     }
 
-    return render(request, 'api_frontends/messier_objects_overview.html', context)
+    return render(request,
+                  'api_frontends/messier_objects_overview.html', context)
 
 
 def mes_obj_detail(request, mes_num):
@@ -41,12 +40,7 @@ def mes_obj_detail(request, mes_num):
 def sol_obj_overview(request):
 
     if request.method == 'POST':
-        if 'captured_only_button' in request.POST:
-            list_of_sol_obj = SolarSystemObject.objects.filter(captured=True)
-        if 'not_captured_only_button' in request.POST:
-            list_of_sol_obj = SolarSystemObject.objects.filter(captured=False)
-        if 'reset_filters_button' in request.POST:
-            list_of_sol_obj = SolarSystemObject.objects.all()
+        list_of_sol_obj = overview_post_request(request)
     # else if not post request.
     else:
         list_of_sol_obj = SolarSystemObject.objects.all()
@@ -67,4 +61,34 @@ def sol_obj_detail(request, slug):
         "sol_obj": sol_obj
     }
 
-    return render(request, 'api_frontends/solar_system_object_detail.html', context)
+    return render(request,
+                  'api_frontends/solar_system_object_detail.html', context)
+
+
+def acm_obj_overview(request):
+
+    if request.method == 'POST':
+        list_of_acm_obj = overview_post_request(request)
+    # else if not post request.
+    else:
+        list_of_acm_obj = AsteroidCometMeteorObject.objects.all()
+
+    context = {
+        "list_of_acm_obj": list_of_acm_obj
+    }
+
+    return render(request,
+                  'api_frontends/asteroids_comets_meteors_overview.html',
+                  context)
+
+
+def acm_obj_detail(request, slug):
+    acm_obj = get_object_or_404(AsteroidCometMeteorObject, slug=slug)
+
+    context = {
+        "acm_obj": acm_obj
+    }
+
+    return render(request,
+                  'api_frontends/asteroids_comets_meteors_detail.html',
+                  context)

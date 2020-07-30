@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+
+<br />
+<hr />
+<h2>{{ acm_obj.scientific_name }} - {{ acm_obj.name }}</h2>
+<h5>Object Type: {{ acm_obj.object_type }}</h5>
+<p>Size: {{ acm_obj.size_km }}km</p>
+<p>Discovery Date: {{ acm_obj.discovery_date }}</p>
+<br />
+{% if acm_obj.captured %} {% if acm_obj.capture_date %}
+<p>Captured: {{ acm_obj.capture_date }}</p>
+{% else %}
+<p>No capture date set.</p>
+{% endif %}
+<img src="{{ acm_obj.photo.url }}" />
+{% else %}
+<p>Not Captured / No Image Uploaded.</p>
+{% endif %}
+<br />
+<hr />
+
+{% endblock %}
