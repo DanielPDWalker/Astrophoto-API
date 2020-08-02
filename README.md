@@ -32,7 +32,8 @@ Images and Information at: [https://danielpdwalker.com/astrophoto_application_ap
 - You can login as admin in the browsable API area as well, top right of the top bar. 
 
 Please note: You will have to navitage to the application folder and activate the virtual enviroment whenever you want to run it!
-(Or right click in the folder and "Open terminal here" or something like that, then start with your commands).
+
+You can right click in the folder and "Open terminal here" or something like that, start your virtual enviroment then start with your commands without the navigation though!
 
 ## Images
 <hr>
