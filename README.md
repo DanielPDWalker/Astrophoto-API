@@ -36,12 +36,17 @@ Please note: You will have to navitage to the application folder and activate th
 
 ## Images
 <hr>
+
 ![Homepage](https://github.com/DanielPDWalker/Astrophoto-API/blob/master/.readme_images/homepage.JPG)
 <hr>
+
 ![Messier Objects](https://github.com/DanielPDWalker/Astrophoto-API/blob/master/.readme_images/messier_objects.JPG)
 <hr>
+
 ![Admin Area](https://github.com/DanielPDWalker/Astrophoto-API/blob/master/.readme_images/admin_area.JPG)
 <hr>
+
 ![API Root](https://github.com/DanielPDWalker/Astrophoto-API/blob/master/.readme_images/api_root.JPG)
 <hr>
+
 ![Messier Objects API](https://github.com/DanielPDWalker/Astrophoto-API/blob/master/.readme_images/messier_objects_api.JPG)
