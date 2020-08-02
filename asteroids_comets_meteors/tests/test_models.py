@@ -30,15 +30,14 @@ class TestModels(TestCase):
         self.assertEquals(self.acm_object_test_one.slug,
                           'test1')
 
-    def test_object_with_same_name_has_unique_slug(self):
+    def test_objects_with_same_names_has_unique_slugs(self):
         self.assertNotEquals(self.acm_object_test_one.slug,
                              self.acm_object_test_two.slug)
 
-    def test_object_str_return_name_and_scientific_namec(self):
-        self.assertIn(self.acm_object_test_one.__str__(), (
-            self.acm_object_test_one.scientific_name,
-            self.acm_object_test_one.name + ' Scientific Name: ' +
-            self.acm_object_test_one.scientific_name))
+    def test_object_str_return_name_and_scientific_name(self):
+        self.assertEquals(self.acm_object_test_one.__str__(),
+                          self.acm_object_test_one.name + ' Scientific Name: ' +
+                          self.acm_object_test_one.scientific_name)
 
     def test_object_str_return_scientific_name_only(self):
         self.assertEquals(self.acm_object_test_three.__str__(),
