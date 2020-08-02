@@ -8,7 +8,7 @@ class MessierObject(models.Model):
     object_type = models.CharField(max_length=255)
     distance_kly = models.CharField(max_length=25)
     constellation = models.CharField(max_length=50)
-    apparent_magnitude = models.FloatField()
+    apparent_magnitude = models.FloatField(null=True)
     photo = models.ImageField(
         upload_to='messier_objects', blank=True, null=True)
     captured = models.BooleanField(default=False)
