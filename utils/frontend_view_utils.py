@@ -7,8 +7,8 @@ from asteroids_comets_meteors.models import AsteroidCometMeteorObject
 
 def overview_post_request(request):
     # request.path_info returns one of the strings below, based
-    # on where the request was sent from. We just use the dict
-    # below to choose the correct model to selected objects.
+    # on where the request was sent from. We just use the model_dict
+    # to choose the correct model for selected objects.
     model_dict = {
         '/messier_objects': MessierObject,
         '/asteroids_comets_meteors': AsteroidCometMeteorObject,

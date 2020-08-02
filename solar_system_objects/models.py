@@ -8,7 +8,7 @@ class SolarSystemObject(models.Model):
     slug = models.SlugField(blank=True)
     object_type = models.CharField(max_length=255)
     parent_object = models.CharField(max_length=255, blank=True, null=True)
-    distance_from_sun_au = models.FloatField(max_length=25)
+    distance_from_sun_au = models.FloatField(max_length=25, null=True)
     photo = models.ImageField(
         upload_to='solar_system_objects', blank=True, null=True)
     captured = models.BooleanField(default=False)
