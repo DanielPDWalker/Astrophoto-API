@@ -3,7 +3,7 @@ from django.test import TestCase
 from asteroids_comets_meteors.models import AsteroidCometMeteorObject
 
 
-class TestModels(TestCase):
+class TestModelAsteroidCometMeteorObject(TestCase):
 
     def setUp(self):
         self.acm_object_test_one = AsteroidCometMeteorObject.objects.create(
