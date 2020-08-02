@@ -1,5 +1,5 @@
 # Astrophoto-API 
-![](https://img.shields.io/github/workflow/status/danielpdwalker/Astrophoto-API/Django%20CI/master)
+![](https://img.shields.io/github/workflow/status/danielpdwalker/Astrophoto-API/Django%20CI/master)  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 An astrophotography Django project for tracking your pictures of targets in the night sky. The application comes with a database with the messier objects pre-loaded, and two other models for adding your own captured images. These are one catagory called "Asteroids, Comets and Meteors" and one called "Solar System Objects" for more general objects in the solar system; planets, moons and so on. 
 
@@ -33,3 +33,15 @@ Images and Information at: [https://danielpdwalker.com/astrophoto_application_ap
 
 Please note: You will have to navitage to the application folder and activate the virtual enviroment whenever you want to run it!
 (Or right click in the folder and "Open terminal here" or something like that, then start with your commands).
+
+## Images
+<hr>
+![Homepage](https://github.com/DanielPDWalker/Astrophoto-API/blob/master/.readme_images/homepage.JPG)
+<hr>
+![Messier Objects](https://github.com/DanielPDWalker/Astrophoto-API/blob/master/.readme_images/messier_objects.JPG)
+<hr>
+![Admin Area](https://github.com/DanielPDWalker/Astrophoto-API/blob/master/.readme_images/admin_area.JPG)
+<hr>
+![API Root](https://github.com/DanielPDWalker/Astrophoto-API/blob/master/.readme_images/api_root.JPG)
+<hr>
+![Messier Objects API](https://github.com/DanielPDWalker/Astrophoto-API/blob/master/.readme_images/messier_objects_api.JPG)
