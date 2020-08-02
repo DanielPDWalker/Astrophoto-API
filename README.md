@@ -24,6 +24,8 @@ Finally I added a frontend for a nice way to display your images. On the fronten
 7. Install the requirements ```pip install -r requirements.txt```
 8. Start the app ```python3 manage.py runserver```
 9. Open your browser of choice and go type ```localhost:8000``` in the address bar.
+- To login to the admin area you go to ```localhost:8000``` and use the username: admin and password: password
+- You can login as admin in the browsable API area as well, top right of the top bar. 
 
 Please note: You will have to navitage to the application folder and activate the virtual enviroment whenever you want to run it!
 (Or right click in the folder and "Open terminal here" or something like that, then start with your commands).
