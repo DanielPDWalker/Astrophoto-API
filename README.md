@@ -44,6 +44,9 @@ You can right click in the folder and "Open terminal here" or something like tha
 ![Messier Objects](https://github.com/DanielPDWalker/Astrophoto-API/blob/master/.readme_images/messier_objects.JPG)
 <hr>
 
+![User Added Comet](https://github.com/DanielPDWalker/Astrophoto-API/blob/master/.readme_images/capturedimagedemo.JPG)
+Example of a user added comet, with image, size and capture date being displayed via the front-end.
+<hr>
 ![Admin Area](https://github.com/DanielPDWalker/Astrophoto-API/blob/master/.readme_images/admin_area.JPG)
 <hr>
 
